@@ -37,7 +37,7 @@ class SmitaRestController {
 	@GetMapping(produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
 	Flux<MessageEvent> createStream() {
 		return Flux.<MessageEvent>generate(
-				sink -> sink.next(new MessageEvent("Mallu Baby ke khaiba, Bhalu Khaiba, Bhalu Khaiba......")))
+				sink -> sink.next(new MessageEvent("Mallu Baby, I love you")))
 				.delayElements(Duration.ofSeconds(1));
 	}
 }
