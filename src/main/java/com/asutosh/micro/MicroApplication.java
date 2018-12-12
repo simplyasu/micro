@@ -42,6 +42,39 @@ class SmitaRestController {
 	}
 }
 
+@RestController
+@RequestMapping("/biswa")
+class BiswaRestController {
+	@GetMapping(produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+	Flux<MessageEvent> createStream() {
+		return Flux.<MessageEvent>generate(
+				sink -> sink.next(new MessageEvent("Bisuaaaaaaaaaaaaaaaaiiiiiiiiiiiiiiiiiii, Mutton Khaiba?...............")))
+				.delayElements(Duration.ofSeconds(1));
+	}
+}
+
+@RestController
+@RequestMapping("/lucy")
+class LucyRestController {
+	@GetMapping(produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+	Flux<MessageEvent> createStream() {
+		return Flux.<MessageEvent>generate(
+				sink -> sink.next(new MessageEvent("Lucy, Chicken khaogi?..................")))
+				.delayElements(Duration.ofSeconds(1));
+	}
+}
+
+@RestController
+@RequestMapping("/sabya")
+class SabyaRestController {
+	@GetMapping(produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+	Flux<MessageEvent> createStream() {
+		return Flux.<MessageEvent>generate(
+				sink -> sink.next(new MessageEvent("Hello Sabya..................")))
+				.delayElements(Duration.ofSeconds(1));
+	}
+}
+
 @Data
 @AllArgsConstructor
 class MessageEvent {
